@@ -1,0 +1,33 @@
+body {
+  background-color: #20252a;
+  color: white;
+  font-family: Sen;
+  user-select: none;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 30px;
+  box-sizing: border-box;
+}
+
+#heading {
+  display: flex;
+  align-items: center;
+  font-family: "Playfair Display", serif;
+  font-size: 47px;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: white;
+  margin-bottom: 20px;
+
+  > img {
+      margin-right: 10px;
+  }
+}
