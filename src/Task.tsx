@@ -9,11 +9,16 @@ type CheckboxProps = {
 
 const Checkbox = ({ checked, onChange }: CheckboxProps) => {
   return (
-    <div className="checkbox" onClick={() => onChange(!checked)}>
+    <div
+      data-testid="checkbox"
+      className="checkbox"
+      onClick={() => onChange(!checked)}
+    >
       <img
         alt="check icon"
         src="/check.svg"
         style={{ opacity: checked ? 1 : 0 }}
+        data-testid="checkIcon"
       />
     </div>
   );
