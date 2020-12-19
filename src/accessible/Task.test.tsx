@@ -17,15 +17,15 @@ const getCheckbox = (checked: boolean) => {
 it("toggles the task checked state", () => {
   render(<Task />);
 
-  // Click the checkbox
+  // Click the unchecked checkbox
   userEvent.click(getCheckbox(false));
 
   // Expect the checkbox to be checked
   expect(getCheckbox(true)).toBeChecked();
 
-  // Click the checkbox
+  // Click the checked checkbox
   userEvent.click(getCheckbox(true));
 
-  // Expect the checkbox to be checked
+  // Expect the checkbox to be unchecked
   expect(getCheckbox(false)).not.toBeChecked();
 });
