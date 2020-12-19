@@ -8,9 +8,9 @@ const getCheckbox = (checked: boolean) => {
   // Including 'name' here makes sure the checkbox is
   // displaying the correct acessible label
   if (checked) {
-    return screen.getByRole("checkbox", { name: /mark as unchecked/i });
+    return screen.getByRole("checkbox", { name: "mark as unchecked" });
   } else {
-    return screen.getByRole("checkbox", { name: /mark as checked/i });
+    return screen.getByRole("checkbox", { name: "mark as checked" });
   }
 };
 
