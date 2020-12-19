@@ -23,12 +23,14 @@
   background-color: #20252a;
   box-sizing: border-box;
   cursor: pointer;
+  overflow: hidden;
 
   > input[type="checkbox"] {
     position: absolute;
     width: 100%;
     height: 100%;
     opacity: 0;
+    margin: 0;
   }
 
   &:focus-within {
