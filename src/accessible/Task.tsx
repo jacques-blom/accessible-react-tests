@@ -1,6 +1,6 @@
 import * as React from "react";
 import "./Task.scss";
-import { useFakeAPI } from "./useFakeAPI";
+import { useFakeAPI } from "../useFakeAPI";
 
 type CheckboxProps = {
   checked: boolean;
@@ -9,16 +9,18 @@ type CheckboxProps = {
 
 const Checkbox = ({ checked, onChange }: CheckboxProps) => {
   return (
-    <div
-      data-testid="checkbox"
-      className="checkbox"
-      onClick={() => onChange(!checked)}
-    >
+    <div data-testid="checkbox" className="accessible-checkbox">
       <img
         alt="check icon"
         src="/check.svg"
         style={{ opacity: checked ? 1 : 0 }}
         data-testid="checkIcon"
+      />
+      <input
+        type="checkbox"
+        aria-label={checked ? "mark as unchecked" : "mark as checked"}
+        checked={checked}
+        onChange={(event) => onChange(event.target.checked)}
       />
     </div>
   );
@@ -28,7 +30,7 @@ export const Task = () => {
   const { task, updateChecked } = useFakeAPI();
 
   return (
-    <div className="task">
+    <div className="accessible-task">
       <Checkbox checked={task.checked} onChange={updateChecked} />
       {task.label}
     </div>
